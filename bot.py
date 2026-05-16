@@ -4,7 +4,7 @@ import os
 
 init(autoreset=True)
 
-TOKEN = os.getenv("TOKEN")
+TOKEN = "8881766204:AAFabfRij0KbLF9wYXFTJ2m8LID5Kgn-dMc"
 
 bot = TeleBot(TOKEN)
 
