@@ -4,11 +4,15 @@ import os
 
 init(autoreset=True)
 
-TOKEN = "8881766204:AAFabfRij0KbLF9wYXFTJ2m8LID5Kgn-dMc"
+TOKEN = os.getenv("TOKEN")
 
 bot = TeleBot(TOKEN)
 
 os.system("cls")
+
+banner = f"""{Fore.CYAN}
+"""
+print(banner)
 
 banner = f"""{Fore.CYAN}
 
