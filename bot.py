@@ -75,76 +75,7 @@ def help_command(message):
     )
 
 
-@bot.message_handler(commands=['menu'])
-def menu(message):
-    keyboard = types.ReplyKeyboardMarkup(
-        resize_keyboard=True
-    )
 
-    keyboard.row("👤 Profile", "ℹ️ Info")
-    keyboard.row("⚙️ Settings", "❌ Exit")
-
-    bot.send_message(
-        message.chat.id,
-        "⚡ Main Menu",
-        reply_markup=keyboard
-    )
-
-
-@bot.callback_query_handler(func=lambda call: True)
-def callbacks(call):
-
-    if call.data == "help":
-        bot.answer_callback_query(
-            call.id,
-            "Opening help..."
-        )
-
-        bot.send_message(
-            call.message.chat.id,
-            "📚 Use /menu to open menu"
-        )
-
-    elif call.data == "menu":
-        bot.answer_callback_query(
-            call.id,
-            "Opening menu..."
-        )
-
-        menu(call.message)
-
-
-@bot.message_handler(func=lambda m: True)
-def all_messages(message):
-
-    if message.text == "👤 Profile":
-        bot.send_message(
-            message.chat.id,
-            f"""
-👤 Your profile
-
-ID: {message.from_user.id}
-Name: {message.from_user.first_name}
-"""
-        )
-
-    elif message.text == "ℹ️ Info":
-        bot.send_message(
-            message.chat.id,
-            "🤖 Demo styled Telegram bot"
-        )
-
-    elif message.text == "⚙️ Settings":
-        bot.send_message(
-            message.chat.id,
-            "⚙️ Settings section"
-        )
-
-    elif message.text == "❌ Exit":
-        bot.send_message(
-            message.chat.id,
-            "👋 Bye!"
-        )
 
 
 print(Fore.YELLOW + "[*] Waiting for users...")
