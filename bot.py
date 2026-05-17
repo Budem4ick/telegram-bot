@@ -8,6 +8,8 @@ TOKEN = "8881766204:AAFabfRij0KbLF9wYXFTJ2m8LID5Kgn-dMc"
 
 bot = TeleBot(TOKEN)
 
+bot.delete_my_commands()
+
 os.system("cls")
 
 banner = f"""{Fore.CYAN}
