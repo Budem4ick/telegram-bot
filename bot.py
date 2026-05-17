@@ -70,8 +70,7 @@ def help_command(message):
 📚 Commands:
 
 /start - Launch bot
-/help - Show help
-/menu - Open menu
+
 """
     )
 
